@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "find . -name \"*.xls\" |xargs rm -rf",
+    "uid" : "FEE03063-C252-47B3-A9A6-96734BFA0EB7",
+    "name" : "rm",
+    "keyword" : "rm"
+  }
+}
