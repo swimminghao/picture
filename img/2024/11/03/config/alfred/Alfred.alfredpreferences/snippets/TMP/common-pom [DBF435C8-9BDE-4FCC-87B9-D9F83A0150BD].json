@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<distributionManagement>\n        <snapshotRepository>\n            <id>snapshot<\/id>\n            <url>${SnapshotRepository}<\/url>\n        <\/snapshotRepository>\n        <repository>\n            <id>releases<\/id>\n            <url>${ReleasesRepository}<\/url>\n        <\/repository>\n    <\/distributionManagement>\n    <profiles>\n        <profile>\n            <id>snapshot<\/id>\n            <properties>\n                <tag><\/tag>\n            <\/properties>\n        <\/profile>\n        <profile>\n            <id>release<\/id>\n            <properties>\n                <tag><\/tag>\n            <\/properties>\n        <\/profile>\n    <\/profiles>\n    <modelVersion>4.0.0<\/modelVersion>\n    <artifactId>sz-artemis-common<\/artifactId>\n    <version>1.0.0.1${tag}<\/version>\n    <parent>\n        <groupId>com.wayue.olympus<\/groupId>\n        <artifactId>sz-artemis-parent<\/artifactId>\n        <version>1.0.0<\/version>\n        <relativePath>..\/pom.xml<\/relativePath>\n    <\/parent>",
+    "uid" : "DBF435C8-9BDE-4FCC-87B9-D9F83A0150BD",
+    "name" : "common-pom",
+    "keyword" : ""
+  }
+}
