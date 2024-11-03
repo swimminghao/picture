@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>1FAF0EB4-5AE3-49D5-ADEA-9CD4CBBFAEEB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gb</string>
+			<key>text</key>
+			<string>Search Github for '{query}'</string>
+			<key>url</key>
+			<string>https://github.com/search?utf8=%E2%9C%93&amp;q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>1FB1FD72-8D1C-4413-A7B5-CD0223AD9D12</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>js</string>
+			<key>text</key>
+			<string>Search Jianshu for '{query}'</string>
+			<key>url</key>
+			<string>https://www.jianshu.com/search?utf8=%E2%9C%93&amp;q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>519A424E-990B-4E8B-AC61-D2FAED14AA08</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>jj</string>
+			<key>text</key>
+			<string>Search Juejin for '{query}'</string>
+			<key>url</key>
+			<string>https://juejin.im/search?type=all&amp;query={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>830BBDEA-42A9-41A9-91CF-5629F12FFDC2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>jd</string>
+			<key>text</key>
+			<string>Search JD for '{query}'</string>
+			<key>url</key>
+			<string>https://search.jd.com/Search?enc=utf-8&amp;keyword={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>9018BD86-98D9-4391-8A70-E8FAFE6490B3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tb</string>
+			<key>text</key>
+			<string>Search Taobao for '{query}'</string>
+			<key>url</key>
+			<string>https://s.taobao.com/search?oe=utf-8&amp;f=8&amp;q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>A18A979A-5EDD-417A-9A79-2481DC7B3F3A</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>keyword</key>
+			<string>snippets</string>
+			<key>text</key>
+			<string>Search SnippetsLab for {query}</string>
+			<key>url</key>
+			<string>snippetslab://search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B30CE222-D589-4D03-85DC-C6258F2499A9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gzh</string>
+			<key>text</key>
+			<string>Search Weixin for '{query}'</string>
+			<key>url</key>
+			<string>https://weixin.sogou.com/weixin?type=2&amp;query={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C0900C09-531D-4DF2-86E6-56BDD371C7ED</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gg</string>
+			<key>text</key>
+			<string>谷歌一下 {query}</string>
+			<key>url</key>
+			<string>https://www.google.com/search?q={query}&amp;safe=off</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C13A3604-D001-4811-8DFF-2302D630D3E7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>zh</string>
+			<key>text</key>
+			<string>Search Zhihu for '{query}'</string>
+			<key>url</key>
+			<string>https://www.zhihu.com/search?type=content&amp;q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D73F7A2A-432E-4671-A727-14DAD07D57EB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>so</string>
+			<key>text</key>
+			<string>Search StackOverflow for '{query}'</string>
+			<key>url</key>
+			<string>https://www.stackoverflow.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
