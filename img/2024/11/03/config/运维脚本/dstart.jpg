@@ -1,0 +1,20 @@
+#!/bin/sh
+#Author:gujc,guobh
+APP_NAME=$1
+echo "start ${APP_NAME}"
+APP_ID=$1
+
+SCRIPTS_DIR=`dirname "$0"`
+PROJECT_DIR=`cd $SCRIPTS_DIR && pwd`
+DT=`date +"%Y%m%d_%H%M%S"`
+
+APP_PID=`ps -ef | grep java |grep "${APP_ID} " | grep -v grep | awk '{print $2}'`
+kill -9 ${APP_PID}
+
+MEM_OPTS="-Xms1G -Xmx1G"
+
+hostname=`hostname`
+#run java
+nohup /opt/jdk1.8.0_172/bin/java ${MEM_OPTS} -Dapp.name=${APP_ID} -Dapollo.meta=http://apollo-dev.shanzhen.me:8080 -jar /opt/spring-boot/${APP_NAME}/${APP_NAME}.jar &
+
+# END OF FILE
