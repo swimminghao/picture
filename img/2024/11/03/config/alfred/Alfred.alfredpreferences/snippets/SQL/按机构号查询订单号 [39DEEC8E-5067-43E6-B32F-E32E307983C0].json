@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT er.ORDER_CODE, od.EXAMINEE_NAME FROM asgard_dataplatform.T66_EXAMINAITION_REPORT er \nLEFT JOIN asgard.`T66_ORDER_DETAIL` od ON od.ORDER_CODE = er.ORDER_CODE \nWHERE od.`INSTIT_CODE` = 'INS398887197' ORDER BY er.REPORT_ID DESC LIMIT 100;",
+    "uid" : "39DEEC8E-5067-43E6-B32F-E32E307983C0",
+    "name" : "按机构号查询订单号",
+    "keyword" : "机构号"
+  }
+}
