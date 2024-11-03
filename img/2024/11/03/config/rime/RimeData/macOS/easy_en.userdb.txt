@@ -1,0 +1,32 @@
+# Rime user dictionary
+#@/db_name	easy_en.userdb
+#@/db_type	userdb
+#@/rime_version	1.5.3
+#@/tick	27
+#@/user_id	macOS
+aria 	aria	c=3 d=2.76023 t=27
+athena 	athena	c=1 d=0.980199 t=27
+auto 	auto	c=1 d=0.99005 t=27
+boost 	boost	c=1 d=0.951229 t=27
+brew 	brew	c=1 d=0.955997 t=27
+change 	change	c=1 d=0.985112 t=27
+code 	code	c=1 d=0.995012 t=27
+dash 	dash	c=1 d=0.918512 t=27
+dependency 	dependency	c=1 d=0.965605 t=27
+document 	document	c=1 d=1 t=27
+excel 	excel	c=1 d=0.965605 t=27
+find 	find	c=1 d=0.937067 t=27
+from 	from	c=1 d=1 t=27
+full 	full	c=1 d=0.97531 t=27
+java 	java	c=3 d=2.90248 t=27
+list 	list	c=1 d=0.970446 t=27
+made 	made	c=1 d=0.97531 t=27
+medical 	medical	c=1 d=0.985112 t=27
+open 	open	c=1 d=0.932394 t=27
+question 	question	c=1 d=0.970446 t=27
+select 	select	c=1 d=0.980199 t=27
+show 	show	c=1 d=0.960789 t=27
+sublime 	sublime	c=1 d=0.960789 t=27
+task 	task	c=1 d=0.995012 t=27
+title 	title	c=1 d=0.941765 t=27
+type 	type	c=2 d=1.956 t=27
