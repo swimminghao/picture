@@ -1,0 +1,4 @@
+appdirs
+evdev
+inotify_simple
+python-xlib
