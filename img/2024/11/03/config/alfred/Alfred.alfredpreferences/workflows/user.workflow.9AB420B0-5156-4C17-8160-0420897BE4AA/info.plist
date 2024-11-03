@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>38BD5F3A-9B2B-47D5-9444-1F906FAB5C0A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79D82EB7-7B15-4DA4-B616-ACAC033336EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>79D82EB7-7B15-4DA4-B616-ACAC033336EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3085B17F-B77B-4FFC-AAD5-D72E5F37DC10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Minja</string>
+	<key>description</key>
+	<string>need to intall pngquant , jpegoptim and gifsicle initially</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>image Compressor</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import subprocess as sp
+import os
+import json
+import shutil
+
+my_env = os.environ.copy()
+my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
+# Note: The first argument is the script's path
+
+for arg in sys.argv[1:]:
+        fileType = (os.path.splitext(arg)[-1]).lower()
+        if fileType == ".png":
+                my_command = ["pngquant", arg, "--quality", "70-95", "--ext=.png", "--force"]
+                sp.check_output(my_command, env=my_env)
+        elif fileType == ".jpg" or fileType == ".jpeg":
+                my_command = ["jpegoptim", "-m70", "--max90", arg] 
+                sp.check_output(my_command, env=my_env)
+        elif fileType == ".gif":
+                my_command = ["gifsicle", "-i", arg, "--optimize=3", "-o", arg] 
+                sp.check_output(my_command, env=my_env)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>79D82EB7-7B15-4DA4-B616-ACAC033336EF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>image Compressor</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>38BD5F3A-9B2B-47D5-9444-1F906FAB5C0A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>Images Compressed !</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>3085B17F-B77B-4FFC-AAD5-D72E5F37DC10</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3085B17F-B77B-4FFC-AAD5-D72E5F37DC10</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>38BD5F3A-9B2B-47D5-9444-1F906FAB5C0A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>79D82EB7-7B15-4DA4-B616-ACAC033336EF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/BlackwinMin/alfred-gallery</string>
+</dict>
+</plist>
