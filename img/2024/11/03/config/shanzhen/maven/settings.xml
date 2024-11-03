@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">	  
+ <localRepository>/Users/xh/software/maven/localBase</localRepository>  
+  <servers>
+     <server>
+       <id>dev</id>
+       <username>dev</username>
+       <password>AHTmtEbwr20z</password>
+     </server>
+   </servers>  
+	<mirrors>
+		<mirror>
+			<id>nexus</id>
+			<mirrorOf>*</mirrorOf>
+			<url>http://118.178.137.55:8081/nexus/content/groups/public/</url>
+			<!-- <url>http://maven.aliyun.com/nexus/content/groups/public/</url> -->
+		</mirror>
+	</mirrors>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>http://118.178.137.55:8081/nexus/content/groups/public/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://118.178.137.55:8081/nexus/content/groups/public/</url>
+					<releases>
+					<enabled>true</enabled>
+					</releases>
+				</pluginRepository>
+			</pluginRepositories>
+			<properties>
+				<SnapshotRepository>http://118.178.137.55:8081/nexus/content/repositories/snapshots</SnapshotRepository>
+				<ReleasesRepository>http://118.178.137.55:8081/nexus/content/repositories/releases</ReleasesRepository>
+			</properties>
+		</profile>
+	</profiles>
+	<activeProfiles>
+		<activeProfile>dev</activeProfile>
+	</activeProfiles>
+</settings>
