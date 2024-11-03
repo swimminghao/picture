@@ -1,0 +1,116 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+"""
+app-tools <start|stop|restart|check|dump|class_heap|deploy|rollback|showlog|version> app_name
+
+Copyright 2016 维跃 Inc.
+Created by fanglei@wayyue.com
+Version 1.0.0
+History：
+1.0.0   初始版本
+"""
+
+import os
+import re
+import shutil
+import signal
+import socket
+import subprocess
+import sys
+import time
+import datetime
+import zipfile
+
+import psutil
+import tailer
+import termcolor
+
+
+PKG_DIR_BASE = '/software/pkg/war/'  # 应用包存放路径
+LOG_TRACE_TIME = 300  # 日志跟踪超时时间
+EXCEPTION_KW = ['Exception','Caused','exception']
+JENKINS_STATUS = 0
+BACKUP_EXPRIATION = 7
+
+app_base_dir = os.path.join('/opt', 'tomcat')
+backup_base_dir = os.path.join('/opt', 'backup')
+rollback_base_dir = os.path.join('/opt', 'rollback')
+
+
+def usage():
+    """
+    打印脚本使用方法
+    """
+    usage_app = termcolor.colored('app-tools <start|stop|restart|check|dump|class_heap|deploy|rollback> app_name', 'green')
+
+    print 'Usage:\n\t%s' % usage_app
+
+
+def highlight(str, type):
+    """
+    高亮脚本执行结果
+    """
+    if type == 'warn':
+        print termcolor.colored(str, 'red', attrs=['bold'])
+    elif type == 'prompt':
+        print termcolor.colored(str, 'blue', attrs=['bold'])
+    elif type == 'ok':
+"app-tools" 588L, 17452C                                                                                                                                                                                                    1,1          顶端
+        rollback_app(app_name)
+    else:
+        usage()
+        sys.exit(1)
+
+
+def main():
+    """
+    主入口(包括多应用操作)
+    """
+    if os.geteuid() != 1100:    # 仅允许szdev(uid统一为1100)运行
+        highlight("该脚本必须使用 'szdev' 用户运行！", 'warn')
+        sys.exit(1)
+
+    if len(sys.argv) == 3:
+        operation = sys.argv[1]
+        app_name = sys.argv[2]
+        app_tag = "default"
+    elif len(sys.argv) == 4:
+        operation = sys.argv[1]
+        app_name = sys.argv[2]
+        app_tag = sys.argv[3]
+    else:
+        usage()
+        sys.exit(1)
+
+    if app_name == '-':
+        if operation in ('check', 'status'):
+            highlight('%-30s%-20s%-20s%-20s' % ('APP_NAME', 'APP_STATUS', 'HTTP_PORT', 'PID'), 'prompt')
+            app_list = get_app_list()
+            for app in app_list:
+                run(operation, app, app_tag)
+        else:
+            highlight("如需继续，请输入 'y' 或 'yes'：", 'prompt')
+            yes = set(['yes','y'])
+            choice = raw_input('> ').lower()
+            if choice in yes:
+                app_list = get_app_list()
+                for app in app_list:
+                    highlight("%s %s" % (operation, app), 'ok')
+                    run(operation, app, app_tag)
+                    time.sleep(1)
+            else:
+                highlight("操作取消", 'warn')
+                sys.exit(1)
+    else:
+        if operation in ('check', 'status'):
+            highlight('%-30s%-20s%-20s%-20s' % ('APP_NAME', 'APP_STATUS', 'HTTP_PORT', 'PID'), 'prompt')
+        run(operation, app_name, app_tag)
+
+
+if __name__ == '__main__':
+    main()
+    if JENKINS_STATUS == 0:
+        sys.exit(0)
+    else:
+        sys.exit(1)
