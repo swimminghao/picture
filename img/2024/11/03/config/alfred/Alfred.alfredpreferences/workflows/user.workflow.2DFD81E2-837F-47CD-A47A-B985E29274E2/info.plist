@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>5DC318C1-C1A0-474E-AB15-038DA15B61E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6606463D-9193-44B1-A782-A8F79427D0D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6606463D-9193-44B1-A782-A8F79427D0D6</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>aa New File from Clipboard - COPY</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set theQuery to item 1 of argv
+tell application "Finder"
+	if (count of windows) &gt; 0 then
+		set theDefault to the POSIX path of ((folder of window 1) as alias)
+	else
+		set theDefault to path to desktop
+	end if
+end tell
+
+-- set resultFile to (choose file name with prompt "Save As File" default name theQuery default location theDefault) as text
+
+set resultFilePosix to the quoted form of (POSIX path of (theDefault &amp; theQuery))
+
+do shell script "pbpaste &gt; " &amp; resultFilePosix
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6606463D-9193-44B1-A782-A8F79427D0D6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nfc</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>New File from Clipboard</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5DC318C1-C1A0-474E-AB15-038DA15B61E1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5DC318C1-C1A0-474E-AB15-038DA15B61E1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>6606463D-9193-44B1-A782-A8F79427D0D6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
