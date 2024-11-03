@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT dr2.*\nfrom t66_ath_biz_info as biz\nleft join t66_ath_data_relation as dr on biz.BIZ_INFO_CODE = dr.DATA_CODE and dr.DATA_TYPE = 'BIZ_INFO' and dr.SZ_STATUS  = 1\nleft join t66_ath_data_relation as dr2 on dr.PROCEDURE_INSTANCE_CODE = dr2.PROCEDURE_INSTANCE_CODE and dr2.SZ_STATUS = 1\nwhere biz.BIZ_CODE_TYPE = 'ORDER' and biz.SZ_STATUS = 1 and biz.BIZ_CODE = '395546495373'",
+    "uid" : "5B682C80-247E-453C-90A9-ECC3799C79E9",
+    "name" : "按订单号查识别号",
+    "keyword" : "识别号"
+  }
+}
